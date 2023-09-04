@@ -21,4 +21,9 @@ public class MainController {
 		model.addAttribute("name", name);
 		return "hello";
 	}
+
+	@GetMapping("/phaser")
+	public String phaser() {
+		return "phaser";
+	}
 }
