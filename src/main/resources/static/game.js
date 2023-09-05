@@ -22,8 +22,10 @@ var bombs;
 var platforms;
 var cursors;
 var score = 0;
-var gameOver = false;
 var scoreText;
+var highScore = parseInt(localStorage.getItem('highScore')) || 0;
+var highScoreText;
+var gameOver = false;
 
 var game = new Phaser.Game(config);
 
@@ -52,6 +54,7 @@ function create ()
 
     // The score
     scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#000' });
+    highScoreText = this.add.text(500, 16, `High Score: ${highScore}`, { fontSize: '32px', fill: '#000' });
 
     // Add colliders to detect collisions and prevent things from
     // falling off the screen
@@ -203,5 +206,14 @@ function hitBomb (player, bomb)
     this.physics.pause();
     player.setTint(0xff0000);
     player.anims.play('turn');
+    endGame.call(this);
+}
+
+var endGame = function () {
+    if (score > highScore) {
+        highScore = score;
+        highScoreText.setText('High Score: ' + highScore);
+        localStorage.setItem('highScore', highScore);
+    }
     gameOver = true;
 }
