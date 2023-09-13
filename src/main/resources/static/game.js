@@ -46,6 +46,7 @@ function create ()
     // Create the background first, so everything else shows up in front of it
     this.add.image(400, 300, 'sky');
 
+
     createPlatforms.call(this);
     createPlayer.call(this);
     createStars.call(this);
@@ -212,8 +213,10 @@ function hitBomb (player, bomb)
 var endGame = function () {
     if (score > highScore) {
         highScore = score;
-        highScoreText.setText('High Score: ' + highScore);
+//        highScoreText.setText('High Score: ' + highScore);
         localStorage.setItem('highScore', highScore);
+        this.add.text(150, 300, `New High Score: ${highScore}`, { fontSize: '48px', fill: '#000' });
     }
+    this.add.text(225, 250, `GAME OVER`, { fontSize: '64px', fill: '#000' });
     gameOver = true;
 }
