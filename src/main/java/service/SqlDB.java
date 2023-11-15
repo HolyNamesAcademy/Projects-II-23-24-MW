@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SqlDB {
-    private String hostName;
+    private final String hostName;
     private final String dbName;
     private final String user;
     private final String password;
