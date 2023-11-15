@@ -53,10 +53,11 @@ function update ()
 {
 }*/
 //this was copied from the PhaserTutorial code
+//corrected pixel size to make it as close to full screen as possible
 var config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
+    width: 1460,
+    height: 855,
     scene: {
         preload: preload,
         create: create,
@@ -68,11 +69,13 @@ var game = new Phaser.Game(config);
 
 function preload ()
     {
+        //loaded sky image
         this.load.image('sky', 'sky.png');
     }
 
 function create ()
     {
+        //put image into canvas
         this.add.image(400, 300, 'sky');
     }
 
