@@ -44,7 +44,7 @@ function preload ()
 }
 
 function create ()
-{
+{7
     this.scale.displaySize.setAspectRatio( 16/8.8);
     this.scale.refresh();
 }
