@@ -44,14 +44,14 @@ function preload ()
 }
 
 function create ()
-{7
+{
     this.scale.displaySize.setAspectRatio( 16/8.8);
     this.scale.refresh();
 }
 
 function update ()
 {
-}*/
+}
 //this was copied from the PhaserTutorial code
 //corrected pixel size to make it as close to full screen as possible
 var config = {
@@ -82,3 +82,43 @@ function create ()
 function update ()
     {
     }
+
+function create ()
+{
+    this.scale.displaySize.setAspectRatio( 16/8.8);
+    this.scale.refresh();
+    this.add.image(400, 300, 'sky');
+}
+
+function update ()
+*/
+var config = {
+    scale: {
+        mode: Phaser.Scale.FIT,
+    },
+    //width: 800,
+    //height: 600,
+    scene: {
+        preload: preload,
+        create: create,
+        update: update
+    }
+};
+
+var game = new Phaser.Game(config);
+
+function preload ()
+{
+    this.load.image('sky', 'sky.png');
+}
+
+function create ()
+{
+    this.scale.displaySize.setAspectRatio( 16/8.8);
+    this.scale.refresh();
+    this.add.image(400, 300, 'sky');
+}
+
+function update ()
+{
+}
