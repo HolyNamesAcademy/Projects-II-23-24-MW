@@ -1,20 +1,5 @@
 var game = new Phaser.Game(config);
 
-function preload ()
-{
-    this.load.image('sky', 'sky.png');
-}
-
-function create ()
-{
-    this.scale.displaySize.setAspectRatio( 16/8.8);
-    this.scale.refresh();
-    this.add.image(400, 300, 'sky');
-}
-
-function update ()
-{
-}*/
 var config = {
     scale: {
         mode: Phaser.Scale.FIT,
@@ -35,8 +20,6 @@ var config = {
        },
 };
 
-var game = new Phaser.Game(config);
-
 function preload ()
 {
     this.load.image('sky', 'sky.png');
@@ -48,9 +31,6 @@ function create ()
 {
     this.scale.displaySize.setAspectRatio( 16/8.8);
     this.scale.refresh();
-    this.add.image(400, 300, 'sky');
-
-
     this.add.image(400, 300, 'sky');
 
     platforms = this.physics.add.staticGroup();
