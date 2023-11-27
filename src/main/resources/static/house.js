@@ -1,5 +1,3 @@
-var game = new Phaser.Game(config);
-
 var config = {
     scale: {
         mode: Phaser.Scale.FIT,
@@ -19,7 +17,7 @@ var config = {
             }
        },
 };
-
+var game = new Phaser.Game(config);
 function preload ()
 {
     this.load.image('sky', 'sky.png');
