@@ -9,13 +9,13 @@ var config = {
         create: create,
         update: update
     },
-        physics: {
-            default: 'arcade',
-            arcade: {
-                gravity: { y: 300 },
-                debug: false
-            }
-       },
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 300 },
+            debug: false
+        }
+    },
 };
 var game = new Phaser.Game(config);
 function preload ()
