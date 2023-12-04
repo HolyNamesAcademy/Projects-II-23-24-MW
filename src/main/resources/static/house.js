@@ -23,10 +23,13 @@ function preload ()
     this.load.image('sky', 'sky.png');
     this.load.image('ground', 'platform.png');
     this.load.image('house background', 'house background.png');
+    this.load.image('placeholder character' 'dude.png');
 
 }
 
 var platforms;
+var player;
+
 function create ()
 {
     this.scale.displaySize.setAspectRatio(16/8);
@@ -43,6 +46,9 @@ function create ()
     platforms.create(600, 400, 'ground');
     platforms.create(50, 250, 'ground');
     platforms.create(750, 220, 'ground');
+
+    player = this.create.add.sprite(100, 450, 'placeholder character');
+
 }
 
 function update ()
