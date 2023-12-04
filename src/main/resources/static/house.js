@@ -23,15 +23,10 @@ function preload ()
     this.load.image('sky', 'sky.png');
     this.load.image('ground', 'platform.png');
     this.load.image('house background', 'house background.png');
-    this.load.spritesheet('dude',
-                'dude.png',
-                { frameWidth: 32, frameHeight: 48 }
-            );
 
 }
 
 var platforms;
-var player;
 
 function create ()
 {
@@ -50,7 +45,6 @@ function create ()
     platforms.create(50, 250, 'ground');
     platforms.create(750, 220, 'ground');
 
-    player = this.physics.add.sprite(100, 450, 'dude');
 
 }
 
