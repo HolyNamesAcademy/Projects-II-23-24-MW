@@ -20,9 +20,12 @@ function preload ()
 
 function create ()
 {
-    this.scale.displaySize.setAspectRatio( 16/8.8);
+    this.scale.displaySize.setAspectRatio( 2/1);
     this.scale.refresh();
-   this.add.image(400, 300, 'sky').setOrigin(0,0);//the Origin part controls where the image is placed
+   this.add.image(400, 300, 'sky');//the Origin part controls where the image is placed
+   var score = 0;
+   var scoreText;
+   scoreText = this.add.text(16, 16, 'Welcome to a world where dogs reign...Doglandia \n But as you explore this cabin in the woods, be alert, \n for something is amiss in the dark forest.', { fontSize: '32px', fill: '#000' });
 }
 
 function update ()
