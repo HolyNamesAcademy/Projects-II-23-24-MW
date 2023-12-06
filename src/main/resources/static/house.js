@@ -22,7 +22,7 @@ function preload ()
 {
     this.load.image('sky', 'sky.png');
     this.load.image('ground', 'platform.png');
-    this.load.image('house background', 'house background.png');
+    this.load.image('house background', 'MicrosoftTeams-image (1).png');
 
 }
 
@@ -34,8 +34,8 @@ function create ()
     this.scale.refresh();
     //this.add.image(400, 200, 'sky');
 
-    var bg = this.add.image(400, 250, 'house background');
-    bg.setDisplaySize(800, 650);
+    var bg = this.add.image(400, 200, 'house background');
+    bg.setDisplaySize(800, 400);
 
     platforms = this.physics.add.staticGroup();
 
