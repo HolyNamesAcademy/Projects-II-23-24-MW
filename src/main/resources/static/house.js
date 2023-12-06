@@ -76,16 +76,21 @@ function update (){
         player.setVelocityX(160);
         player.anims.play('right', true);
     }
-    else if (cursors.up.isDown){
+    else{
+        player.setVelocityX(0);
+        player.anims.play('turn');
+    }
+
+    if (cursors.up.isDown){
         player.setVelocityY(-160);
     }
     else if (cursors.down.isDown){
         player.setVelocityY(160);
     }
     else{
-        player.setVelocityX(0);
+        //player.setVelocityX(0);
         player.setVelocityY(0);
-        player.anims.play('turn');
+        //player.anims.play('turn');
     }
 
     /* old jump - not needed anymore
