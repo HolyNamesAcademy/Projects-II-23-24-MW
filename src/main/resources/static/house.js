@@ -12,7 +12,7 @@ var config = {
         physics: {
             default: 'arcade',
             arcade: {
-                gravity: { y: 300 },
+                //gravity: { y: 300 },
                 debug: false
             }
        },
@@ -76,12 +76,21 @@ function update (){
         player.setVelocityX(160);
         player.anims.play('right', true);
     }
+    else if (cursors.up.isDown){
+        player.setVelocityY(-160);
+    }
+    else if (cursors.down.isDown){
+        player.setVelocityY(160);
+    }
     else{
-    player.setVelocityX(0);
-    player.anims.play('turn');
+        player.setVelocityX(0);
+        player.setVelocityY(0);
+        player.anims.play('turn');
     }
 
+    /* old jump - not needed anymore
     if (cursors.up.isDown){
         player.setVelocityY(-330);
     }
+    */
 }
