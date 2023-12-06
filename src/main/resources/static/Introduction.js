@@ -2,8 +2,8 @@ var config = {
     scale: {
         mode: Phaser.Scale.FIT,
     },
-    //width: 800,
-    //height: 600,
+    width: 800,
+    height: 400,
     scene: {
         preload: preload,
         create: create,
@@ -15,17 +15,19 @@ var game = new Phaser.Game(config);
 
 function preload ()
 {
-    this.load.image('sky', 'sky.png');
+    this.load.image('greenBackground', 'green.png');
 }
 
 function create ()
 {
-    this.scale.displaySize.setAspectRatio( 2/1);
-    this.scale.refresh();
-   this.add.image(400, 300, 'sky');//the Origin part controls where the image is placed
+
+   this.scale.displaySize.setAspectRatio( 2/1);
+   this.scale.refresh();
+   var bg= this.add.image(400, 200, 'greenBackground');
+    bg.setDisplaySize(800,400);
    var score = 0;
    var scoreText;
-   scoreText = this.add.text(16, 16, 'Welcome to a world where dogs reign...Doglandia \n But as you explore this cabin in the woods, be alert, \n for something is amiss in the dark forest.', { fontSize: '32px', fill: '#000' });
+   scoreText = this.add.text(10, 16, 'Welcome to a world where dogs reign...Doglandia \n But as you explore this cabin in the woods, be alert, \n for something is amiss in the dark forest.', { fontSize: '32px', fill: '#000' });
 }
 
 function update ()
