@@ -2,8 +2,8 @@ var config = {
     scale: {
         mode: Phaser.Scale.FIT,
     },
-    //width: 800,
-    //height: 600,
+    width: 800,
+    height: 400,
     scene: {
         preload: preload,
         create: create,
@@ -16,6 +16,7 @@ var config = {
                 debug: false
             }
        },
+
 };
 var game = new Phaser.Game(config);
 function preload ()
@@ -23,14 +24,20 @@ function preload ()
     this.load.image('sky', 'sky.png');
     this.load.image('ground', 'platform.png')
     this.load.spritesheet('dude', 'dude.png',{ frameWidth: 32, frameHeight: 48 });
+    this.load.image('house background', 'house background.png');
+
 }
 
 var platforms;
+
 function create ()
 {
-    this.scale.displaySize.setAspectRatio( 16/8.8);
+    this.scale.displaySize.setAspectRatio(16/8);
     this.scale.refresh();
-    this.add.image(400, 300, 'sky');
+    //this.add.image(400, 200, 'sky');
+
+    var bg = this.add.image(400, 250, 'house background');
+    bg.setDisplaySize(800, 650);
 
     platforms = this.physics.add.staticGroup();
 
