@@ -28,8 +28,10 @@ function create ()
    var score = 0;
    var scoreText;
    scoreText = this.add.text(10, 16, '\n  Welcome to a world where dogs reign...\n               Doglandia \n     But as you explore this cabin \n         in the woods, be alert, \n  for something is amiss in the forest.', { fontSize: '32px', fill: '#000' });
+
 }
 
 function update ()
 {
+    cursors = this.input.keyboard.createCursorKeys();
 }
