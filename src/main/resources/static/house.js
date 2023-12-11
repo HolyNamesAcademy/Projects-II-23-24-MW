@@ -36,19 +36,24 @@ function create ()
     this.scale.refresh();
     //this.add.image(400, 200, 'sky');
 
+    platforms = this.physics.add.staticGroup();
+    platforms.create(400, 15, 'ground').setScale(4).refreshBody();
+    platforms.create(400, 457, 'ground').setScale(4).refreshBody();
+
+
     var bg = this.add.image(400, 200, 'house background');
     bg.setDisplaySize(800, 400);
 
-    platforms = this.physics.add.staticGroup();
 
-    platforms.create(400, 568, 'ground').setScale(2).refreshBody();
 
-    platforms.create(600, 400, 'ground');
+
+    /*platforms.create(600, 400, 'ground');
     platforms.create(50, 250, 'ground');
     platforms.create(750, 220, 'ground');
+    */
 
     //player
-    player = this.physics.add.sprite(100, 450, 'dude');
+    player = this.physics.add.sprite(100, 350, 'dude');
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
 
@@ -71,6 +76,8 @@ function create ()
         frameRate: 10,
         repeat: -1
     });
+
+    this.physics.add.collider(player, platforms);
 }
 
 function update (){
