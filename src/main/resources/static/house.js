@@ -103,9 +103,11 @@ function update (){
 
     if (cursors.up.isDown){
         player.setVelocityY(-160);
+        player.anims.play('down');
     }
     else if (cursors.down.isDown){
         player.setVelocityY(160);
+        player.anims.play('up');
     }
     else{
         //player.setVelocityX(0);
