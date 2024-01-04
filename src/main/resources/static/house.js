@@ -23,8 +23,8 @@ function preload ()
 {
     this.load.image('sky', 'sky.png');
     this.load.image('ground', 'platform.png')
-    this.load.spritesheet('dude', 'dude.png',{ frameWidth: 32, frameHeight: 48 });
-    this.load.spritesheet('dog', 'dogSpriteSheet.png', {frameWidth: 20, frameHeight: 20});
+    this.load.spritesheet('dude', 'dude.png',{ frameWidth: 48, frameHeight: 42 });
+    this.load.spritesheet('dog', 'dog sprite sheet final vr.png', {frameWidth: 52, frameHeight: 40});
     this.load.image('house background', 'house background.png');
 
 }
@@ -55,34 +55,40 @@ function create ()
 
     this.anims.create({
         key: 'left',
-        frames: this.anims.generateFrameNumbers('dog', { start: 5, end: 8 }),
+        frames: this.anims.generateFrameNumbers('dog', { start: 4, end: 6 }),
         frameRate: 10,
         repeat: -1
     });
 
     this.anims.create({
         key: 'turn',
-        frames: [ { key: 'dog', frame: 4 } ],
+        frames: [ { key: 'dog', frame: 2 } ],
         frameRate: 20
     });
 
     this.anims.create({
         key: 'right',
-        frames: this.anims.generateFrameNumbers('dog', { start: 9, end: 11 }),
+        frames: this.anims.generateFrameNumbers('dog', { start: 7, end: 9 }),
         frameRate: 10,
         repeat: -1
     });
     this.anims.create({
         key: 'up',
-        frames: this.anims.generateFrameNumbers('dog', { start: 12, end: 15}),
+        frames: this.anims.generateFrameNumbers('dog', { start: 10, end: 11}),
         frameRate: 10,
         repeat: -1
     });
     this.anims.create({
             key: 'down',
-            frames: this.anims.generateFrameNumbers('dog', { start: 15, end: 18}),
+            frames: this.anims.generateFrameNumbers('dog', { start: 2, end: 3}),
             frameRate: 10,
             repeat: -1
+    });
+    this.anims.create({
+        key: 'idle',
+        frames: this.anims.generateFrameNumbers('dog', {start: 0, end: 1}),
+        frameRate: 10,
+        repeat: -1
     });
 }
 
@@ -98,21 +104,21 @@ function update (){
     }
     else{
         player.setVelocityX(0);
-        player.anims.play('turn');
+        player.anims.play('idle', true);
     }
 
     if (cursors.up.isDown){
         player.setVelocityY(-160);
-        player.anims.play('down');
+        player.anims.play('up', true);
     }
     else if (cursors.down.isDown){
         player.setVelocityY(160);
-        player.anims.play('up');
+        player.anims.play('down', true);
     }
     else{
         //player.setVelocityX(0);
         player.setVelocityY(0);
-        //player.anims.play('turn');
+        //player.anims.play('idle');
     }
 
     /* old jump - not needed anymore
