@@ -87,7 +87,7 @@ function create ()
     this.anims.create({
         key: 'idle',
         frames: this.anims.generateFrameNumbers('dog', {start: 0, end: 1}),
-        frameRate: 10,
+        frameRate: 5,
         repeat: -1
     });
 }
