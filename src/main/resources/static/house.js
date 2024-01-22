@@ -26,6 +26,7 @@ function preload ()
     this.load.spritesheet('dude', 'dude.png',{ frameWidth: 48, frameHeight: 42 });
     this.load.spritesheet('dog', 'dog sprite sheet final vr.png', {frameWidth: 52, frameHeight: 40});
     this.load.image('house background', 'house background.png');
+    this.load.image('key', 'key 2.png');
 
 }
 
@@ -47,6 +48,9 @@ function create ()
     platforms.create(600, 400, 'ground');
     platforms.create(50, 250, 'ground');
     platforms.create(750, 220, 'ground');
+
+    var key = this.add.image(400, 250, 'key');
+    key.setDisplaySize(50, 50);
 
     //player
     player = this.physics.add.sprite(100, 450, 'dog');
