@@ -31,6 +31,10 @@ function preload ()
 }
 
 var platforms;
+var keyCoordX = 100;
+var keyCoordY = 100;
+var key;
+var haveKey = false;
 
 function create ()
 {
@@ -49,7 +53,7 @@ function create ()
     platforms.create(50, 250, 'ground');
     platforms.create(750, 220, 'ground');
 
-    var key = this.add.image(400, 250, 'key');
+    key = this.add.image(keyCoordX, keyCoordY, 'key');
     key.setDisplaySize(50, 50);
 
     //player
@@ -124,6 +128,17 @@ function update (){
         player.setVelocityY(0);
         //player.anims.play('idle');
     }
+
+    if((player.x < keyCoordX + 50 && player.x > keyCoordX - 20) && (player.y < keyCoordY + 30 && player.y > keyCoordY -10)){
+       key.destroy();
+       haveKey = true;
+    }
+
+    if((player.x < 450 && player.x > 350) && (player.y < 450 && player.y > 370) && haveKey == true){
+         player.destroy();
+       }
+
+
 
     /* old jump - not needed anymore
     if (cursors.up.isDown){
