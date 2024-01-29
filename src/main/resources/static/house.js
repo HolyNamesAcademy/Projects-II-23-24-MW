@@ -34,7 +34,7 @@ var platforms;
 var keyCoordX = 100;
 var keyCoordY = 100;
 var key;
-var haveKey = localStorage.getItem('haveKey');
+var haveKey = JSON.parse(localStorage.getItem('haveKey')) || false;
 
 function create ()
 {
@@ -53,8 +53,12 @@ function create ()
     platforms.create(50, 250, 'ground');
     platforms.create(750, 220, 'ground');
 
-    key = this.add.image(keyCoordX, keyCoordY, 'key');
-    key.setDisplaySize(50, 50);
+    //if key is in inventory, dont display it
+    if(haveKey == false){
+        key = this.add.image(keyCoordX, keyCoordY, 'key');
+        key.setDisplaySize(50, 50);
+    }
+
 
     //player
     player = this.physics.add.sprite(100, 450, 'dog');
