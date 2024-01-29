@@ -34,7 +34,7 @@ var platforms;
 var keyCoordX = 100;
 var keyCoordY = 100;
 var key;
-var haveKey = false;
+var haveKey = localStorage.getItem('haveKey');
 
 function create ()
 {
@@ -129,9 +129,11 @@ function update (){
         //player.anims.play('idle');
     }
 
+    //key collection
     if((player.x < keyCoordX + 50 && player.x > keyCoordX - 20) && (player.y < keyCoordY + 30 && player.y > keyCoordY -10)){
        key.destroy();
        haveKey = true;
+       localStorage.setItem('haveKey', haveKey);
     }
 
     if((player.x < 450 && player.x > 350) && (player.y < 450 && player.y > 370) && haveKey == true){
